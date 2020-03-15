@@ -44,9 +44,7 @@ int main(int argc, char* argv[]) {
 
         //ip sip, dip
 
-
-
-        if(ntohs(eth_header->ethertype) == 0x800) //ethernet next ip?
+        if(ntohs(eth_header->ethertype) == 0x800)           //ethernet next ip?
         {
 
             packet += sizeof(eth_header);
@@ -57,7 +55,7 @@ int main(int argc, char* argv[]) {
 
             //tcp sport, dport
 
-            if((ip_header->protocol) == 6)  //ip next tcp?
+            if((ip_header->protocol) == 6)          //ip next tcp?
             {
                 packet += (ip_header->hlen)*4;
                 TCP *tcp_header= (TCP*)(packet);
